@@ -85,12 +85,59 @@ CI/CD process <img src="CICD.png" width="500" height="300" />
   * Apply and Save.
   * Click build now and see the results.
 * Jobtypes: check which type we can use
-  * dsaf
-  * asfa
-* 
-
+* Build description and source code management: we can pull and manage code from git, gitlab or bitbucket
+* Build triggers:
+  * Trigger builds remotely (e.g., from scripts): Need create a TOCKEN to do it.
+  * Build after other projects are built: we can choose which project will be run before others
+  * Build periodically: we can schedule it daily, weekly or monthly...
+  * GitHub hook trigger for GITScm polling: Jenkins will run the project based on github activities with complex projects.
+  * Poll SCM: should be chosen, it will track the commit activities.
+* The build environment:
+  * Delete workspace before build starts
+  * Use secret text(s) or file(s).
+  * Add timestamps to the Console Output: : Time out when can not receive outputs from the console.
+  * Inspect build log for published build scans: Select "Execute Window Batch Command" for Window or "Execute Shell" for mac or linux
+  * Terminate a build if it's stuck
+  * With Ant: work with Java Ant.
+* Run and monitor jobs
+* Run and monitor jobs using Console output
+* Monitor build trends: Click on "Trend" next to "Build History"; you can see timeline of historical build.
+* Quiz
+  * Question 1 of 7: You have created a new item using the Freestyle project type. To save your job configuration and keep working on it, what should you select?
+    * OK
+    * Save
+    * Done
+    * Apply(Correct Answer)
+  * Question 2 of 7: You need to create a job that requires a series of steps to produce a final outcome. Which type of job is best to select?
+    * Pipeline (Correct Answer)
+    * Freestyle
+    * Multi-configuration
+  * Question 3 of 7: Why would you want to discard old builds?
+    * to not exceed your allotted amount of builds
+    * to erase any duplicate builds
+    * to free up space on your server (Correct Answer)
+  * Question 4 of 7: You want to trigger a job on a schedule. Which option under the Build Triggers section in Jenkins should you select?
+    * Build after other projects are built
+    * GitHub hook trigger
+    * Trigger builds remotely
+    * Build periodically (Correct Answer)
+  * Question 5 of 7: Within the build environment section of Jenkins, where can you aggregate downstream test results?
+    * under Additional Behaviors
+    * under Credentials
+    * under Add build step
+    * under Post-build Actions (Correct Answer)
+  * Question 6 of 7: You have started a job. Under Build History, what does it mean when there is a circle next to the build ID?
+    * The job has been paused.
+    * The job has not been run before.  (Correct Answer)
+    * The job has been run before.
+    * The job has no data collected.
+  * Question 7 of 7: Under Build History, which mark indicates that your job was not successful?
+    * a green checkmark
+    * a red checkmark
+    * a black x
+    * a red x (Correct Answer)
 ## 3. More detail on jobs <a name="4"></a>
-* 
+* Using a global build tool
 ## 4. Conlcusions <a name="5"></a>
 * 
 

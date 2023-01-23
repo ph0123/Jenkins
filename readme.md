@@ -9,7 +9,8 @@ CI/CD process <img src="CICD.png" width="500" height="300" />
   - [1. Install Jenkins](#1-install-jenkins)
   - [2. Jobs in Jenkins ](#2-jobs-in-jenkins-)
   - [3. More detail on jobs ](#3-more-detail-on-jobs-)
-  - [4. Conlcusions ](#4-conlcusions-)
+  - [4. Organize Jobs with Views and Folders ](#4-organize-jobs-with-views-and-folders-)
+  - [5. Conlcusions ](#5-conlcusions-)
 
 
 ## 0. Introduction <a name="1"></a>
@@ -137,7 +138,99 @@ CI/CD process <img src="CICD.png" width="500" height="300" />
     * a black x
     * a red x (Correct Answer)
 ## 3. More detail on jobs <a name="4"></a>
-* Using a global build tool
-## 4. Conlcusions <a name="5"></a>
-* 
-
+* Using a global build tool: Note about Git and Maven installation if needed.
+* Source Code Management: 
+  * add git URL
+  * If repository is public, we dont need to add access tocken on "Credentials"
+  * Build: Choose correct "Add build step", i.e. Java Maven: Invoke top-level Maven targets is selected.
+* Browse a job's workspace
+  * You can see all files and codes here.
+  * Wipe Out Current Workspace on the lert to remove all files in the workspace.
+* Manage Artifacts
+* Parameters and environment variables
+  * String: example: VERSION_NUMBER
+    * We can use: echo $VERSION_NUMBER on linux or echo %VERSION_NUMBER% on window to see it.
+  * Choice
+    * We can add many options that we want
+    * Ex: DEVELOPMENT, STAGING, PRODUCTION.
+  * Boolen
+    * Similar to choice parameter but it is true or false.
+* Schedule Jobs
+  * See it on Build Triggers -> Build periodically
+  * Running job automatically
+  * Updating sorfware
+  * Check any problem with system
+  * *****: minute (0-59), hour(0-23), day of month (1-31), month (1-12), Day of week (0-6: Sunday to Saturday)
+* Quiz
+  * Question 1 of 6: When adding a string parameter, which three things can you fill in?
+    * the default value, the version, and the URL
+    * the name, the URL, and the version
+    * the name, the default value, and the description (Correct Answer)
+    * the version, the command, and the description
+  * Question 2 of 6: For choice parameters, if you enter DEVELOPMENT, STAGING, and PRODUCTION, which choice will be used as the default?
+    * PRODUCTION
+    * DEVELOPMENT (Correct Answer) - first option
+    * All three choices will be set as default.
+    * STAGING
+  * Question 3 of 6: After you name your Boolean parameter, a checkbox parameter will be added to the build interface. If the box is checked, what will the run test environment variable be set to?
+    * Active
+    * Deployed
+    * FALSE
+    * TRUE (Correct Answer)
+  * Question 4 of 6: Which open-source software must you have in order to use a global build tool in Jenkins?
+    * GIT (Correct Answer)
+    * Perforce
+    * Bitbucket
+    * Mercurial
+  * Question 5 of 6: Jenkins makes it easy to manage artifacts with which tool?
+    * Build Triggers
+    * Post-build Actions (Correct Answer)- can clean before building jobs
+    * Build Environment
+    * Source Code Management
+  * Question 6 of 6: To access parameters on a Windows system, which Build command shows the correct syntax?
+    * %STRING_PARAMETER% (Correct Answer)
+    * $STRING_PARAMETER
+    * $STRING_PARAMETER$
+## 4. Organize Jobs with Views and Folders <a name="5"></a>
+* View and folders
+* Create a view: Go to Dashboard to create and setting it.
+* Create a folder: create item as create project but choosing folder.
+* Delete views and folders
+* Quiz
+  * Question 1 of 2: You are creating a view and want to include all existing and new jobs with the word BUILD. What is the correct syntax for using a regular expression to include jobs in the view?
+  * *BUILD_JOBS*
+  * .BUILD_JOBS.
+  * *BUILD*
+  * .*BUILD.* (Correct Answer)
+* Question 2 of 2: When you delete a folder, what happens to the contents of that folder?
+  * The jobs and folders that the folder contains are deleted, but the views remain.
+  * All the contents of the folder are deleted, along with the folder. (Correct Answer)
+  * The folder itself is saved, but the jobs and views are deleted.
+  * The views and folders that the folder contains are deleted, but the jobs remain.
+## 5. Conlcusions <a name="6"></a>
+* Pipeline as code 
+  * Stored in a file named Jenkinsfile
+  * Can be versioned in a code repository
+  * Configure Jenkins jobs
+  * Contain stages and steps
+  * We can define stage with "Build", "Test", ... etc.
+  * Steps is in a stage.
+  * Chose Job Pipeline when create new item.
+  * See Pipeline script and write the Jenkinsfile there.
+* Continuing on with Jenkins
+  * Can work with some other software that are similar to Jenkins.
+  * Stackoverflow is a good page to discuss jenkins problem.
+* Quiz
+  * Question 1 of 1: The following code snippet shows stages of a pipeline. What must each stage also include?
+      pipeline {
+          stages {
+                stage('Build') {
+                }
+                stage('Test') {
+                }
+          }
+      }
+    * three steps for each stage
+    * a post-build action
+    * at least two steps
+    * at least one step (Correct Answer)
